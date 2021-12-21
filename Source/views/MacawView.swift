@@ -74,8 +74,9 @@ open class MacawView: MView, MGestureRecognizerDelegate {
     @objc public init?(node: Node, coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
-        self.node = node
-        self.renderer = RenderUtils.createNodeRenderer(node, view: drawingView)
+        // TODO: Temporarly Disabled due to Memory Leak
+        //self.node = node
+        //self.renderer = RenderUtils.createNodeRenderer(node, view: drawingView)
 
         zoom.initialize(onChange: { [weak self] transform in
             self?.onZoomChange(t: transform)
